@@ -7,6 +7,7 @@ const unsplash = new Unsplash({
 
 export default function SearchBar(){
     const [keyword, setKeyword] = useState("");
+    const [photos, setPhotos] = useState([]);
 
     const searchPhotos = async (e) => {
         e.preventDefault();
@@ -15,15 +16,34 @@ export default function SearchBar(){
          .photos(keyword)
         .then(toJson)
         .then((json) => {
-        console.log(json);
+        setPhotos(json.results);
          });
     }
 
     return(
         <div className="Searchbar">
             <form onSubmit={searchPhotos}>
-                <input type="search" placeholder="Search photos" value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
+                <input 
+                type="search" 
+                placeholder="Search photos" 
+                value={keyword} 
+                onChange={(e) => setKeyword(e.target.value)}
+                />
             </form>
+
+            <div className="image-grid">
+            {photos.map((photo) => 
+            <div className="card" key={photo.id}>
+            <img
+                className="card-image"
+                alt={photo.alt_description}
+                src={photo.urls.full}
+                width="50%"
+                height="50%"
+              ></img>
+              </div>
+              )}
+      </div>
         </div>
     );
 }
