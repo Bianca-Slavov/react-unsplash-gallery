@@ -1,0 +1,10 @@
+* {
+    background-color: #f9f6ed;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .App {
+    margin: 0;
+    padding: 0;
+  }
