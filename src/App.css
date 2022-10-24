@@ -2,9 +2,14 @@
     background-color: #f9f6ed;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    text-align: center;
   }
 
   .App {
-    margin: 0;
+    margin-top: 15px;
     padding: 0;
+  }
+
+  header{
+    color: #fd886d;
   }

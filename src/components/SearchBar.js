@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Unsplash, { toJson } from 'unsplash-js';
 import PhotoGrid from "./PhotoGrid";
+import "../styles/SearchBar.css";
 
 const unsplash = new Unsplash({
     accessKey: process.env.REACT_APP_ACCESS_KEY
@@ -24,6 +25,7 @@ export default function SearchBar(){
     
     return(
         <div className="Searchbar">
+            <p>Type a word and hit enter</p>
             <form onSubmit={searchPhotos}>
                 <input 
                 type="search" 

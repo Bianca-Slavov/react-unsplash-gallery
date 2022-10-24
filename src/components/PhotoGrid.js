@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Masonry from 'react-masonry-css'
-import './PhotoGrid.css';
+import Masonry from 'react-masonry-css';
+import "../styles/PhotoGrid.css";
 
 
 export default function PhotoGrid(props){

@@ -1,0 +1,15 @@
+form {
+    margin: 20px 0px;
+}
+
+input {
+    padding: 2px 30px;
+    border: 1px solid #feb994;
+    border-radius: 10px;
+}
+
+p {
+    font-size: 12px;
+    font-style: italic;
+    margin: 0;
+}

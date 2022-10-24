@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      Search beautiful free high-resolution photos
+      Search beautiful <strong>free</strong> high-resolution photos
       <SearchBar />
       </header>
     </div>
