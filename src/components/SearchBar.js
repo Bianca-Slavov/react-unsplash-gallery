@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Unsplash, { toJson } from 'unsplash-js';
+import PhotoGrid from "./PhotoGrid";
 
 const unsplash = new Unsplash({
     accessKey: process.env.REACT_APP_ACCESS_KEY
@@ -16,10 +17,11 @@ export default function SearchBar(){
          .photos(keyword)
         .then(toJson)
         .then((json) => {
+            console.log(json.results);
         setPhotos(json.results);
          });
     }
-
+    
     return(
         <div className="Searchbar">
             <form onSubmit={searchPhotos}>
@@ -30,20 +32,7 @@ export default function SearchBar(){
                 onChange={(e) => setKeyword(e.target.value)}
                 />
             </form>
-
-            <div className="image-grid">
-            {photos.map((photo) => 
-            <div className="card" key={photo.id}>
-            <img
-                className="card-image"
-                alt={photo.alt_description}
-                src={photo.urls.full}
-                width="50%"
-                height="50%"
-              ></img>
-              </div>
-              )}
-      </div>
+            <PhotoGrid photos={photos}/>
         </div>
     );
 }
