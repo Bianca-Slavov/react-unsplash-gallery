@@ -18,7 +18,6 @@ export default function SearchBar(){
          .photos(keyword)
         .then(toJson)
         .then((json) => {
-            console.log(json.results);
         setPhotos(json.results);
          });
     }
