@@ -10,6 +10,11 @@ export default function PhotoGrid(props){
         700: 1,
     }
 
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }
+
     if (props.photos){
 
     return(
@@ -27,6 +32,7 @@ export default function PhotoGrid(props){
                 src={photo.urls.full}
                 width="100%"
                 height="50%"
+                onClick={() => { openInNewTab(photo.urls.full) }}
               ></img>
               </div>
               )}
